@@ -20,68 +20,59 @@
 
     <div id="limite" style="display:none;">
         <h4>Choisis le nombre de points</h4>
-        <!-- form method="POST" onsubmit="return sendData();" -->
-            <!-- input type="number" name="nbPoints" id="nbPoints" -->
-            <ul id="nbPoints">
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(1)">1 pt</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(2)">2 pts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(3)">3 pts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(4)">4 pts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(5)">5 pts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(6)">6 pts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(7)">7 pts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(8)">8 ps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(9)">9 pts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p onclick="choisirNbPoints(10)">10 pts</p>
-                    </a>
-                </li>
-            </ul>
-        <!--/!-->
+        <ul id="nbPoints">
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(1)">1 pt</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(2)">2 pts</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(3)">3 pts</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(4)">4 pts</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(5)">5 pts</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(6)">6 pts</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(7)">7 pts</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(8)">8 ps</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(9)">9 pts</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p onclick="choisirNbPoints(10)">10 pts</p>
+                </a>
+            </li>
+        </ul>
     </div>
-
-    <!-- form method="POST" onsubmit="return sendData();">
-        <input type="text" name="name" id="name">
-        <input type="text" name="age" id="age">
-        <input type="submit" name="submit_form" value="Submit">
-    </!-->
 
     <div id="partie" style="display:none;">
         <h3>Tu as choisi une partie en <span id="resPtsChoisis"></span> points.</h3>
@@ -115,21 +106,6 @@
         <p><strong>Ton score : <span id="scoresFinUser"></span>, le score de l'ordi : <span id="scoresFinIA"></span></strong></p>        
         <h4 id="quiGagne"></h4>
     </div>
-
-
-    <!-- hr>
-    <p>
-        <ul>
-            Etapes :
-            <li>afficher bouton début de partie / choix </li>
-            <li>faire choix ordi </li>
-            <li>récupérer choix joueur</li>    
-            <li>comparer les 2 choix et décider lequel gagne (fixer les règles)</li>
-            <li>calculer le score et le stocker dans une variable</li>    
-            <li>diriger vers page de début si set pas fini (décider score max du set)</li>    
-        </ul>
-    </p -->
-    
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
