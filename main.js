@@ -1,6 +1,5 @@
 
 //  Déclaration de la class jeu
-
 class Jeu {
 };
 
@@ -63,11 +62,12 @@ function choisirIA(gagneDuel) {
 }
 
 function regleDuels() {
+    jeu.gagneDuel = document.getElementById('gagnantDuel');
     //  Eliminer les nuls
     if(jeu.userChoice === jeu.iaChoice) {
         jeu.gagneDuel = 'aucun';
 //          console.log(`Aucun gagnant.`);
-        document.getElementById('gagnantDuel').innerHTML = `Aucun gagnant.`;
+        jeu.gagneDuel.innerHTML = `Aucun gagnant.`;
     } else {
 //          console.log(`userChoice : ${jeu.userChoice}, iaChoice : ${jeu.iaChoice}`);
         switch(jeu.userChoice) {
@@ -77,14 +77,14 @@ function regleDuels() {
                         jeu.gagneDuel = 'feuille';
                         jeu.scores.scoreIA ++;
 //                          console.log(`L'ordi marque (${jeu.gagneDuel}), son score : ${jeu.scores.scoreIA}.`);
-                        document.getElementById('gagnantDuel').innerHTML = `L'ordi marque (${jeu.gagneDuel}), son score : ${jeu.scores.scoreIA}.`;
+                        jeu.gagneDuel.innerHTML = `L'ordi marque (${jeu.gagneDuel}), son score : ${jeu.scores.scoreIA}.`;
                         return jeu.scores.scoreIA;
                     break;
                     case 'ciseaux':
                         jeu.gagneDuel = 'pierre';
                         jeu.scores.scoreUser ++;
 //                        console.log(`Tu marques (${jeu.gagneDuel}), ton score : ${jeu.scores.scoreUser}.`);
-                        document.getElementById('gagnantDuel').innerHTML = `Tu marques (${jeu.gagneDuel}), ton score : ${jeu.scores.scoreUser}.`;
+                        jeu.gagneDuel.innerHTML = `Tu marques (${jeu.gagneDuel}), ton score : ${jeu.scores.scoreUser}.`;
                         return jeu.scores.scoreUser;
                 }
             break;
@@ -94,14 +94,14 @@ function regleDuels() {
                         jeu.gagneDuel = 'feuille';
                         jeu.scores.scoreUser ++;
 //                        console.log(`Tu marques (${jeu.gagneDuel}), ton score : ${jeu.scores.scoreUser}.`);
-                        document.getElementById('gagnantDuel').innerHTML = `Tu marques (${jeu.gagneDuel}), ton score : ${jeu.scores.scoreUser}.`;
+                        jeu.gagneDuel.innerHTML = `Tu marques (${jeu.gagneDuel}), ton score : ${jeu.scores.scoreUser}.`;
                         return jeu.scores.scoreUser;
                     break;
                     case 'ciseaux':
                         jeu.gagneDuel = 'ciseaux';
                         jeu.scores.scoreIA ++;
 //                        console.log(`L'ordi marque (${jeu.gagneDuel}), son score : ${jeu.scores.scoreIA}.`);
-                        document.getElementById('gagnantDuel').innerHTML = `L'ordi marque (${jeu.gagneDuel}), son score : ${jeu.scores.scoreIA}.`;
+                        jeu.gagneDuel.innerHTML = `L'ordi marque (${jeu.gagneDuel}), son score : ${jeu.scores.scoreIA}.`;
                         return jeu.scores.scoreIA;
                 }
             break;
@@ -111,25 +111,27 @@ function regleDuels() {
                         jeu.gagneDuel = 'pierre';
                         jeu.scores.scoreIA ++;
 //                        console.log(`L'ordi marque (${jeu.gagneDuel}), son score : ${jeu.scores.scoreIA}.`);
-                        document.getElementById('gagnantDuel').innerHTML = `L'ordi marque (${jeu.gagneDuel}), son score : ${jeu.scores.scoreIA}.`;
+                        jeu.gagneDuel.innerHTML = `L'ordi marque (${jeu.gagneDuel}), son score : ${jeu.scores.scoreIA}.`;
                         return jeu.scores.scoreIA;
                     break;
                     case 'feuille':
                         jeu.gagneDuel = 'ciseaux';
                         jeu.scores.scoreUser ++;
 //                        console.log(`Tu marques (${jeu.gagneDuel}), ton score : ${jeu.scores.scoreUser}.`);
-                        document.getElementById('gagnantDuel').innerHTML = `Tu marques (${jeu.gagneDuel}), ton score : ${jeu.scores.scoreUser}.`;
+                        jeu.gagneDuel.innerHTML = `Tu marques (${jeu.gagneDuel}), ton score : ${jeu.scores.scoreUser}.`;
                         return jeu.scores.scoreUser;
                 }
                 break;
             default:
-                document.getElementById('gagnantDuel').innerHTML = `<p>Inconnu</p>`;
+                jeu.gagneDuel.innerHTML = `<p>Inconnu</p>`;
         }
+        return jeu.scores.scoreUser;
     }
 }
 
 //  Terminer la partie, afficher les scores et le bouton pour commencer une partie
 function fin_de_partie() {
+    jeu.imgFinish = document.getElementById("imgFinish");
     if(jeu.scores.scoreIA>=jeu.limitePartie || jeu.scores.scoreUser>=jeu.limitePartie) {
         jeu.gagnant = jeu.scores.scoreUser>jeu.scores.scoreIA?jeu.scores.scoreUser:jeu.scores.scoreIA;
         jeu.gagnant = jeu.scores.scoreUser?'Toi':'L\'ordi';
@@ -140,10 +142,19 @@ function fin_de_partie() {
 //        console.log(jeu.scores.scoreIA);
         document.getElementById('scoresFinIA').textContent = `${jeu.scores.scoreIA}`;
         document.getElementById('quiGagne').innerHTML = `Le gagnant est ${jeu.gagnant}`;
-        document.getElementById("imgFinish").src = "finish.jpeg";
-        document.getElementById("imgFinish").style.display = "block";
+        jeu.imgFinish.src = "finish.jpeg";
+        jeu.imgFinish.style.display = "block";
         debut.style.display = 'block';
     }
 }
+
+/********** TUTO *************/
+
+location.replace("https://www.w3schools.com");
+    //  Remplace le doc courant, mais sans possibilité de retour en arrière
+    //  Le doc courant est EFFACE de l'historique du nav.
+location.assign("https://www.w3schools.com"); 
+    //  Remplace le doc courant mais le conserve dans l'historique du nav.
+
 
 
